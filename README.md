@@ -1,80 +1,57 @@
-# Project Title
+# 🎨 Animaciones Gráficas en OLED SSD1306 (ESP32)
 
-## Description
-This project is aimed at solving complex problems using innovative solutions. It leverages state-of-the-art technologies to deliver effective outcomes.
-
----
-
-## Features
-
-- **Feature 1:** Detailed explanation of feature 1.
-- **Feature 2:** Detailed explanation of feature 2.
-- **Feature 3:** Detailed explanation of feature 3.
+Animaciones dinámicas y funciones de dibujo personalizadas para pantallas OLED (controlador SSD1306) usando ESP32 y la librería Adafruit GFX.
 
 ---
 
-## Installation Instructions
+## ✨ Características Técnicas
 
-1. Clone the repository:
-   
-   ```bash
-   git clone https://github.com/Pedrom-GH/P5_b.git
-   ```
-
-2. Navigate to the project directory:
-   
-   ```bash
-   cd P5_b
-   ```
-
-3. Install the required dependencies:
-   
-   ```bash
-   npm install
-   ```
+- **Motor de Animación:** Lógica de fotogramas para animación de objetos (barco, mosca, etc.)
+- **Primitivas Gráficas:** Renderizado de píxeles, líneas y formas con Adafruit GFX
+- **Algoritmos Personalizados:** Funciones como `dibujarSonrisa` con trigonometría (cos/sin)
+- **Gestión de Hardware:** Configuración I2C optimizada para ESP32
 
 ---
 
-## Usage
+## 📋 Requisitos
 
-To start the project, run:
-
-```bash
-npm start
-```
-
----
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+| Componente | Especificación |
+|-----------|---|
+| **Microcontrolador** | ESP32 |
+| **Display** | OLED 128x64, SSD1306, I2C (0x3C) |
+| **Adafruit SSD1306** | v2.5.7+ |
+| **Adafruit GFX Library** | v1.11.5+ |
 
 ---
 
-## Contributing
+## 🔌 Conexión de Hardware
 
-1. Fork the repository.
-2. Create a new branch:
-   
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-
-3. Commit your changes:
-   
-   ```bash
-   git commit -m "Add some feature"
-   ```
-
-4. Push to the branch:
-   
-   ```bash
-   git push origin feature/YourFeature
-   ```
-
-5. Open a pull request.
+| Función | Pin ESP32 |
+|---------|-----------|
+| **SDA** | GPIO 21 |
+| **SCL** | GPIO 22 |
+| **VCC** | 3.3V |
+| **GND** | GND |
 
 ---
 
-## Acknowledgements
+## 🚀 Compilación y Ejecución
 
-- Thanks to all contributors for their hard work and dedication!
+Este proyecto utiliza **PlatformIO**:
+
+1. Instala la extensión de PlatformIO en VS Code
+2. Conecta tu ESP32 al puerto USB
+3. Ejecuta: `pio run -t upload`
+4. El monitor serie mostrará el estado de inicialización
+
+---
+
+## 📂 Estructura del Código
+
+- **loop():** Gestiona la lógica de movimiento y actualización de pantalla
+- **Actualización de coordenadas:** Cada ciclo actualiza (x, y) de objetos
+- **Buffer:** Limpia y redibuja la pantalla en cada iteración
+
+---
+
+*Desarrollado para prácticas de sistemas embebidos y computación gráfica.*
